@@ -19,5 +19,9 @@ namespace run4cause.Models
         public string Email { get; set; }
 
         public float TotalDistanceCovered { get; set; }
+
+        public List<Entry>? Entries { get; set; }
+
+        public List<Tracking>? Trackings { get; set; }
     }
 }
