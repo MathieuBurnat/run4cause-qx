@@ -1,4 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using run4cause.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<Run4causeContext>(options =>
+{
+    options
+        .UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
+        .UseSnakeCaseNamingConvention();
+});
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -11,6 +21,14 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
+}
+// Check if the database exists, if it's not the case it created
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+    var context = services.GetRequiredService<Run4causeContext>();
+    context.Database.EnsureCreated();
 }
 
 app.UseHttpsRedirection();
