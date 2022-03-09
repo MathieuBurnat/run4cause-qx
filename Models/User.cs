@@ -1,5 +1,8 @@
 using System.ComponentModel.DataAnnotations;
+<<<<<<< HEAD
 using System.ComponentModel.DataAnnotations.Schema;
+=======
+>>>>>>> 81303d9 (Add Identity scaffolding)
 using Microsoft.AspNetCore.Identity;
 
 namespace run4cause.Models
