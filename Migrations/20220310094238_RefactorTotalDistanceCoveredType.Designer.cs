@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using run4cause.Data;
@@ -11,9 +12,10 @@ using run4cause.Data;
 namespace run4cause.Migrations
 {
     [DbContext(typeof(Run4causeContext))]
-    partial class Run4causeContextModelSnapshot : ModelSnapshot
+    [Migration("20220310094238_RefactorTotalDistanceCoveredType")]
+    partial class RefactorTotalDistanceCoveredType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
