@@ -1,8 +1,9 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 
 namespace run4cause.Models
 {
-    public class User
+    public class User : IdentityUser<int>
     {
         public int Id { get; set; }
 
@@ -15,10 +16,7 @@ namespace run4cause.Models
         [MaxLength(16)]
         public string? PhoneNumber { get; set; }
 
-        [Required, MaxLength(320)] // RFC : https://datatracker.ietf.org/doc/html/rfc3696#section-3
-        public string Email { get; set; }
-
-        public float TotalDistanceCovered { get; set; }
+        public float? TotalDistanceCovered { get; set; }
 
         public List<Entry>? Entries { get; set; }
 
