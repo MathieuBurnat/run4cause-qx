@@ -33,6 +33,11 @@ dotnet ef migrations add [name]
 dotnet ef database update
 ```
 
+### Update schema with a specific migrations
+```bash
+dotnet ef database update [migration_name]
+```
+
 ### Delete schema
 ```bash
 dotnet ef database drop
