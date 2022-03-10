@@ -12,6 +12,7 @@ builder.Services.AddDbContext<Run4causeContext>(options =>
         .UseSnakeCaseNamingConvention();
 });
 builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddSignInManager<SignInManager<User>>()
     .AddEntityFrameworkStores<Run4causeContext>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -49,8 +50,12 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+    endpoints.MapRazorPages();
+});
 
 app.Run();
