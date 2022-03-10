@@ -19,5 +19,29 @@ namespace run4cause.Data
         public virtual DbSet<Tracking> Trackings { get; set; }
         public virtual DbSet<RunWaypoint> RunWaypoints { get; set; }
 
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            this.SeedRoles(modelBuilder);
+            this.SeedUsers(modelBuilder);
+        }
+
+        protected void SeedRoles(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Role>().HasData(new Role() { Id = ((int)Constants.Roles.Admin), Name = "Admin" });
+            modelBuilder.Entity<Role>().HasData(new Role { Id = ((int)Constants.Roles.Moderator), Name = "Moderator" });
+            modelBuilder.Entity<Role>().HasData(new Role { Id = ((int)Constants.Roles.Runner), Name = "Runner" });
+        }
+        protected void SeedUsers(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>().HasData(new User { Id = 1, FirstName = "Run4", LastName = "admin", UserName = "default_admin" });
+            modelBuilder.Entity<User>().HasData(new User { Id = 2, FirstName = "Run4", LastName = "moderator", UserName = "default_moderator" });
+            modelBuilder.Entity<User>().HasData(new User { Id = 3, FirstName = "Run4", LastName = "runner", UserName = "default_Runner" });
+
+            modelBuilder.Entity<UserRole>().HasData(new UserRole { Id = 1, UserId = 1, RoleId = (int)Constants.Roles.Admin });
+            modelBuilder.Entity<UserRole>().HasData(new UserRole { Id = 2, UserId = 2, RoleId = (int)Constants.Roles.Moderator });
+            modelBuilder.Entity<UserRole>().HasData(new UserRole { Id = 3, UserId = 3, RoleId = (int)Constants.Roles.Runner });
+        }
     }
 }
