@@ -18,7 +18,7 @@ namespace run4cause.Data
         public virtual DbSet<Sponsorship> Sponsorships { get; set; }
         public virtual DbSet<Tracking> Trackings { get; set; }
         public virtual DbSet<RunWaypoint> RunWaypoints { get; set; }
-
+        public virtual DbSet<Entry> Entries { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
