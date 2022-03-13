@@ -122,7 +122,6 @@ namespace run4cause.Migrations
                     b.ToTable("entries", (string)null);
                 });
 
-<<<<<<< HEAD
             modelBuilder.Entity("run4cause.Models.Role", b =>
                 {
                     b.Property<int>("Id")
@@ -170,8 +169,6 @@ namespace run4cause.Migrations
                         });
                 });
 
-=======
->>>>>>> 02f2ece (Add initial migration)
             modelBuilder.Entity("run4cause.Models.Run", b =>
                 {
                     b.Property<int>("Id")
@@ -305,7 +302,6 @@ namespace run4cause.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-<<<<<<< HEAD
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("integer")
                         .HasColumnName("access_failed_count");
@@ -322,14 +318,12 @@ namespace run4cause.Migrations
                         .HasColumnType("boolean")
                         .HasColumnName("email_confirmed");
 
-=======
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(320)
                         .HasColumnType("character varying(320)")
                         .HasColumnName("email");
 
->>>>>>> 02f2ece (Add initial migration)
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("text")
@@ -340,7 +334,6 @@ namespace run4cause.Migrations
                         .HasColumnType("text")
                         .HasColumnName("last_name");
 
-<<<<<<< HEAD
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("boolean")
                         .HasColumnName("lockout_enabled");
@@ -361,14 +354,11 @@ namespace run4cause.Migrations
                         .HasColumnType("text")
                         .HasColumnName("password_hash");
 
-=======
->>>>>>> 02f2ece (Add initial migration)
                     b.Property<string>("PhoneNumber")
                         .HasMaxLength(16)
                         .HasColumnType("character varying(16)")
                         .HasColumnName("phone_number");
 
-<<<<<<< HEAD
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("boolean")
                         .HasColumnName("phone_number_confirmed");
@@ -389,17 +379,14 @@ namespace run4cause.Migrations
                         .HasColumnType("text")
                         .HasColumnName("user_name");
 
-=======
                     b.Property<float>("TotalDistanceCovered")
                         .HasColumnType("real")
                         .HasColumnName("total_distance_covered");
 
->>>>>>> 02f2ece (Add initial migration)
                     b.HasKey("Id")
                         .HasName("pk_users");
 
                     b.ToTable("users", (string)null);
-<<<<<<< HEAD
 
                     b.HasData(
                         new
@@ -542,8 +529,6 @@ namespace run4cause.Migrations
                             RoleId = 3,
                             UserId = 3
                         });
-=======
->>>>>>> 02f2ece (Add initial migration)
                 });
 
             modelBuilder.Entity("run4cause.Models.Waypoint", b =>
