@@ -67,6 +67,7 @@ namespace run4cause.Areas.Identity.Pages.Account
             /// </summary>
             [Required]
             [EmailAddress]
+            [Display(Name ="Adresse mail")]
             public string Email { get; set; }
 
             /// <summary>
@@ -75,13 +76,14 @@ namespace run4cause.Areas.Identity.Pages.Account
             /// </summary>
             [Required]
             [DataType(DataType.Password)]
+            [Display(Name = "Mot de passe")]
             public string Password { get; set; }
 
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Display(Name = "Remember me?")]
+            [Display(Name = "Se souvenir de moi")]
             public bool RememberMe { get; set; }
         }
 
