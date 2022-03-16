@@ -6,8 +6,6 @@ namespace run4cause.Models
 {
     public class User : IdentityUser<int>
     {
-        public int Id { get; set; }
-
         [Required]
         public string FirstName { get; set; }
 
