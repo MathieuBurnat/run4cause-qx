@@ -12,9 +12,6 @@ namespace run4cause.Models
         [Required]
         public string LastName { get; set; }
 
-        [MaxLength(16)]
-        public string? PhoneNumber { get; set; }
-
         [Column(TypeName = "decimal(20,2)")]
         public decimal? TotalDistanceCovered { get; set; }
 

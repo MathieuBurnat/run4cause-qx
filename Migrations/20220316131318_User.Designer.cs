@@ -12,7 +12,7 @@ using run4cause.Data;
 namespace run4cause.Migrations
 {
     [DbContext(typeof(Run4causeContext))]
-    [Migration("20220316124037_User")]
+    [Migration("20220316131318_User")]
     partial class User
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -154,19 +154,19 @@ namespace run4cause.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "8d2cefb3-88aa-4462-90f7-e2915f72bb96",
+                            ConcurrencyStamp = "56d0c4e8-ecc3-47b0-b827-62aca08109cf",
                             Name = "Admin"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "408b981f-6eb4-411e-a5a3-f3ffce93c10a",
+                            ConcurrencyStamp = "2d783ff2-47a7-47d2-89c3-a78e9dc6c17f",
                             Name = "Moderator"
                         },
                         new
                         {
                             Id = 3,
-                            ConcurrencyStamp = "711e4a85-d9d4-40f9-b745-af3004954a2a",
+                            ConcurrencyStamp = "d012dbc3-1181-4e2c-9120-a5c754c7e7f8",
                             Name = "Runner"
                         });
                 });
@@ -351,8 +351,7 @@ namespace run4cause.Migrations
                         .HasColumnName("password_hash");
 
                     b.Property<string>("PhoneNumber")
-                        .HasMaxLength(16)
-                        .HasColumnType("character varying(16)")
+                        .HasColumnType("text")
                         .HasColumnName("phone_number");
 
                     b.Property<bool>("PhoneNumberConfirmed")
@@ -385,7 +384,7 @@ namespace run4cause.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "29684717-b274-4c92-94d0-275810e21891",
+                            ConcurrencyStamp = "2c599ca1-a503-4e41-9de0-da96890edc88",
                             EmailConfirmed = false,
                             FirstName = "Run4",
                             LastName = "admin",
@@ -398,7 +397,7 @@ namespace run4cause.Migrations
                         {
                             Id = 2,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6b7773bd-8dc9-42e7-87ee-c678fb50c8d7",
+                            ConcurrencyStamp = "cb8273f1-56b4-4d25-9bb0-079710da62cc",
                             EmailConfirmed = false,
                             FirstName = "Run4",
                             LastName = "moderator",
@@ -411,7 +410,7 @@ namespace run4cause.Migrations
                         {
                             Id = 3,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "83ed0c48-8ac9-4188-b340-d7cdfda0cf59",
+                            ConcurrencyStamp = "867081b4-a787-4391-9330-d4ba3df3d285",
                             EmailConfirmed = false,
                             FirstName = "Run4",
                             LastName = "runner",
