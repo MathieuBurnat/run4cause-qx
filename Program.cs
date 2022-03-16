@@ -11,7 +11,8 @@ builder.Services.AddDbContext<Run4causeContext>(options =>
         .UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
         .UseSnakeCaseNamingConvention();
 });
-builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services
+    .AddDefaultIdentity<User>()
     .AddSignInManager<SignInManager<User>>()
     .AddEntityFrameworkStores<Run4causeContext>();
 // Add services to the container.
